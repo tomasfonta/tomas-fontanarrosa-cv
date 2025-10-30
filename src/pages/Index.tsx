@@ -6,6 +6,9 @@ import { Badge } from '@/components/ui/badge';
 import { Download, Mail, Phone, MapPin, Sun, Moon } from 'lucide-react';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { TechStack } from '@/components/TechStack';
+import { SocialLinks } from '@/components/SocialLinks';
+import { ContactForm } from '@/components/ContactForm';
+import { ProjectShowcase } from '@/components/ProjectShowcase';
 import { translations } from '@/lib/translations';
 
 const { BASE_URL } = import.meta.env;
@@ -44,7 +47,7 @@ const Index = () => {
 		: 'bg-gray-50 border-gray-200';
 
 	return (
-		<div className={`min-h-screen ${themeClasses} font-mono transition-colors duration-300`}>
+		<div className={`min-h-screen ${themeClasses} font-mono transition-colors duration-300`} style={{ scrollBehavior: 'smooth' }}>
 			{/* Header */}
 			<header className={`sticky top-0 z-50 ${isDarkMode ? 'bg-gray-900/80' : 'bg-white/80'} backdrop-blur-sm border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
 				<div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
@@ -79,9 +82,12 @@ const Index = () => {
 
 			<div id="resume-content">
 				<main className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-6xl">
-					{/* Hero Section */}
+					{/* Hero Section with enhanced design */}
 					<section className={`mb-8 sm:mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 						<div className={`${cardClasses} rounded-lg p-6 sm:p-8 border relative overflow-hidden`}>
+							{/* Animated gradient background */}
+							<div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-blue-500/5 to-purple-500/5 animate-pulse" style={{ animationDuration: '3s' }}></div>
+							
 							<div className="absolute top-3 sm:top-4 left-3 sm:left-4 flex gap-1 sm:gap-2">
 								<div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500"></div>
 								<div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500"></div>
@@ -96,9 +102,9 @@ const Index = () => {
 								/>
 							</div>
 
-							<div className="pt-8 sm:pt-8">
+							<div className="pt-8 sm:pt-8 relative z-10">
 								<div className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-2 text-sm sm:text-base`}>// {t.welcomeMessage}</div>
-								<h1 className={`text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 ${isDarkMode ? 'text-green-400' : 'text-green-600'} leading-tight`}>
+								<h1 className={`text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 ${isDarkMode ? 'text-green-400' : 'text-green-600'} leading-tight animate-fade-in`}>
 									Tomás Fontanarrosa
 								</h1>
 								<h2 className={`text-lg sm:text-xl md:text-2xl ${isDarkMode ? 'text-blue-400' : 'text-blue-600'} mb-4 sm:mb-6 leading-relaxed`}>
@@ -119,6 +125,9 @@ const Index = () => {
 										<span>Palma de Mallorca, Spain</span>
 									</div>
 								</div>
+
+								{/* Social Links */}
+								<SocialLinks isDarkMode={isDarkMode} className="mt-4" />
 							</div>
 						</div>
 					</section>
@@ -366,6 +375,16 @@ const Index = () => {
 								</CardContent>
 							</Card>
 						</div>
+					</section>
+
+					{/* Projects Showcase Section */}
+					<section className={`mb-8 sm:mb-12 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+						<ProjectShowcase isDarkMode={isDarkMode} translations={t} />
+					</section>
+
+					{/* Contact Form Section */}
+					<section className={`mb-8 sm:mb-12 transition-all duration-1000 delay-1100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+						<ContactForm isDarkMode={isDarkMode} translations={t} />
 					</section>
 				</main>
 			</div>
