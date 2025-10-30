@@ -90,7 +90,7 @@ export const translations = {
 		languagesTitle: "langues",
 		hobbiesTitle: "loisirs",
 		projectsTitle: "projetsEnVedette",
-		contactTitle: "prendrcontact",
+		contactTitle: "prendreContact",
 		contactDescription: "Vous avez un projet en tête ? Discutons de la façon dont nous pouvons travailler ensemble pour donner vie à vos idées.",
 		namePlaceholder: "Votre Nom",
 		emailPlaceholder: "Votre Email",

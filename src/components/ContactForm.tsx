@@ -34,7 +34,10 @@ export const ContactForm = ({ isDarkMode = true, translations }: ContactFormProp
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		// In a real implementation, you would send this to a backend
+		// Note: This is a demo form. In production, implement actual backend integration
+		// or use a service like Formspree, EmailJS, or Netlify Forms
+		const mailtoLink = `mailto:fontanarrosatomas@gmail.com?subject=Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(formData.email)}`;
+		window.location.href = mailtoLink;
 		toast.success(translations.successMessage);
 		setFormData({ name: '', email: '', message: '' });
 	};
