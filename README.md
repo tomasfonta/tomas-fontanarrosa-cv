@@ -1,4 +1,4 @@
-Hello welcome to www.tomasfontanarrosa.com CV
+Hello welcome to www.tomasfontanarrosa.online CV
 
 To run the project locally follow these steps:
 
