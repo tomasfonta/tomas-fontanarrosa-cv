@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Download, Mail, Phone, MapPin, Sun, Moon } from 'lucide-react';
+import { Download, Mail, Phone, MapPin, Sun, Moon, Github, ExternalLink, TrendingUp, Building2, ShoppingBag } from 'lucide-react';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { TechStack } from '@/components/TechStack';
 import { translations } from '@/lib/translations';
@@ -49,7 +49,7 @@ const Index = () => {
 			<header className={`sticky top-0 z-50 ${isDarkMode ? 'bg-gray-900/80' : 'bg-white/80'} backdrop-blur-sm border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
 				<div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
 					<div className={`${isDarkMode ? 'text-green-400' : 'text-green-600'} font-bold text-lg sm:text-xl`}>
-						&gt; tomasfontanarrosa.com
+						&gt; fontanarrosatomas.online
 					</div>
 					<div className="flex flex-wrap items-center gap-2 sm:gap-4">
 						<Button
@@ -118,6 +118,15 @@ const Index = () => {
 										<MapPin className="w-4 h-4 flex-shrink-0" />
 										<span>Palma de Mallorca, Spain</span>
 									</div>
+									<a
+										href="https://github.com/tomasfonta"
+										target="_blank"
+										rel="noopener noreferrer"
+										className={`flex items-center gap-2 ${isDarkMode ? 'text-gray-300 hover:text-green-400' : 'text-gray-700 hover:text-green-600'} text-sm sm:text-base transition-colors`}
+									>
+										<Github className="w-4 h-4 flex-shrink-0" />
+										<span>github.com/tomasfonta</span>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -314,6 +323,107 @@ const Index = () => {
 						</Card>
 					</section>
 
+					{/* Startups & Projects Section */}
+					<section className={`mb-8 sm:mb-12 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+						<Card className={cardClasses}>
+							<CardContent className="p-6 sm:p-8">
+								<h3 className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'} flex flex-wrap items-center gap-1 sm:gap-2`}>
+									<span className={`${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>const</span>
+									<span className="break-words">{t.startupsTitle}</span>
+									<span className={`${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>= [</span>
+								</h3>
+
+								<div className="pl-4 sm:pl-6">
+									<div className="space-y-8 sm:space-y-10">
+
+										{/* RestoCompras */}
+										<div className={`border-l-2 ${isDarkMode ? 'border-yellow-400/30' : 'border-yellow-600/30'} pl-4 sm:pl-6 relative`}>
+											<div className={`absolute -left-2 top-0 w-4 h-4 ${isDarkMode ? 'bg-yellow-400' : 'bg-yellow-600'} rounded-full`}></div>
+											<div className="mb-4">
+												<div className="flex flex-wrap items-center gap-3 mb-2">
+													<ShoppingBag className={`w-5 h-5 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} />
+													<h4 className={`${isDarkMode ? 'text-white' : 'text-gray-900'} text-lg sm:text-xl font-semibold leading-tight`}>RestoCompras</h4>
+													<Badge variant="secondary" className={`${isDarkMode ? 'bg-yellow-600/20 text-yellow-400' : 'bg-yellow-100 text-yellow-700'} text-xs`}>Startup Founder</Badge>
+												</div>
+												<p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-4 text-sm sm:text-base leading-relaxed`}>
+													Founded and developed RestoCompras, an e-commerce platform for the restaurant and hospitality sector. Built the full-stack solution from the ground up, enabling restaurants and food businesses to source supplies, ingredients, and equipment online with a streamlined ordering experience.
+												</p>
+												<div className="flex flex-wrap gap-1 sm:gap-2 mb-4">
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">E-Commerce</Badge>
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">Founder</Badge>
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">Full Stack</Badge>
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">Hospitality</Badge>
+												</div>
+												{/* Website preview card */}
+												<a
+													href="https://www.restocompras.store/"
+													target="_blank"
+													rel="noopener noreferrer"
+													className={`flex items-center gap-3 p-3 sm:p-4 rounded-lg border ${isDarkMode ? 'border-gray-600 bg-gray-700/50 hover:bg-gray-700' : 'border-gray-300 bg-gray-100 hover:bg-gray-200'} transition-colors group`}
+												>
+													<div className={`p-2 rounded-md ${isDarkMode ? 'bg-yellow-600/20' : 'bg-yellow-100'}`}>
+														<ShoppingBag className={`w-6 h-6 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} />
+													</div>
+													<div className="flex-1 min-w-0">
+														<p className={`font-semibold text-sm ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>restocompras.store</p>
+														<p className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} truncate`}>B2B marketplace for restaurants & hospitality</p>
+													</div>
+													<ExternalLink className={`w-4 h-4 flex-shrink-0 ${isDarkMode ? 'text-gray-400 group-hover:text-yellow-400' : 'text-gray-500 group-hover:text-yellow-600'} transition-colors`} />
+												</a>
+											</div>
+										</div>
+
+										{/* Boutique International Money Transferring */}
+										<div className={`border-l-2 ${isDarkMode ? 'border-yellow-400/30' : 'border-yellow-600/30'} pl-4 sm:pl-6 relative`}>
+											<div className={`absolute -left-2 top-0 w-4 h-4 ${isDarkMode ? 'bg-yellow-400' : 'bg-yellow-600'} rounded-full`}></div>
+											<div className="mb-4">
+												<div className="flex flex-wrap items-center gap-3 mb-2">
+													<Building2 className={`w-5 h-5 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} />
+													<h4 className={`${isDarkMode ? 'text-white' : 'text-gray-900'} text-lg sm:text-xl font-semibold leading-tight`}>Boutique International Money Transferring</h4>
+													<Badge variant="secondary" className={`${isDarkMode ? 'bg-yellow-600/20 text-yellow-400' : 'bg-yellow-100 text-yellow-700'} text-xs`}>Co-Founder</Badge>
+												</div>
+												<p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-4 text-sm sm:text-base leading-relaxed`}>
+													Co-founded a boutique fintech initiative specializing in international money transfers for individuals and small businesses. Focused on providing competitive exchange rates and a seamless digital experience for cross-border payments, targeting underserved corridors in Latin America and Europe.
+												</p>
+												<div className="flex flex-wrap gap-1 sm:gap-2">
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">Fintech</Badge>
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">FX / Forex</Badge>
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">Payments</Badge>
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">Co-Founder</Badge>
+												</div>
+											</div>
+										</div>
+
+										{/* Trading Bot */}
+										<div className={`border-l-2 ${isDarkMode ? 'border-yellow-400/30' : 'border-yellow-600/30'} pl-4 sm:pl-6 relative`}>
+											<div className={`absolute -left-2 top-0 w-4 h-4 ${isDarkMode ? 'bg-yellow-400' : 'bg-yellow-600'} rounded-full`}></div>
+											<div className="mb-4">
+												<div className="flex flex-wrap items-center gap-3 mb-2">
+													<TrendingUp className={`w-5 h-5 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} />
+													<h4 className={`${isDarkMode ? 'text-white' : 'text-gray-900'} text-lg sm:text-xl font-semibold leading-tight`}>Algorithmic Trading Bot</h4>
+													<Badge variant="secondary" className={`${isDarkMode ? 'bg-yellow-600/20 text-yellow-400' : 'bg-yellow-100 text-yellow-700'} text-xs`}>Side Project</Badge>
+												</div>
+												<p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-4 text-sm sm:text-base leading-relaxed`}>
+													Developed an algorithmic trading bot integrating TradingView's Pine Script strategy signals with Interactive Brokers' API for automated order execution. The system listens to real-time alerts from TradingView webhooks, processes signal logic, and routes trades to Interactive Brokers (IBKR), enabling fully automated entry and exit management across equities and futures markets.
+												</p>
+												<div className="flex flex-wrap gap-1 sm:gap-2">
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">TradingView</Badge>
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">Interactive Brokers</Badge>
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">Pine Script</Badge>
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">Algorithmic Trading</Badge>
+													<Badge className="bg-yellow-600/20 text-yellow-400 text-xs">Python</Badge>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+								<div className={`${isDarkMode ? 'text-gray-500' : 'text-gray-400'} mt-6`}>];</div>
+							</CardContent>
+						</Card>
+					</section>
+
 					{/* Languages & Hobbies Section */}
 					<section className={`mb-8 sm:mb-12 transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 						<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
@@ -374,6 +484,17 @@ const Index = () => {
 			<footer className={`border-t ${isDarkMode ? 'border-gray-700' : 'border-gray-200'} py-6 sm:py-8 mt-8 sm:mt-12`}>
 				<div className={`container mx-auto px-4 sm:px-6 text-center ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} text-sm sm:text-base`}>
 					<p>&copy; 2025 Tomás Fontanarrosa. Make Bitcoin Great Again</p>
+					<div className="flex justify-center mt-3">
+						<a
+							href="https://github.com/tomasfonta"
+							target="_blank"
+							rel="noopener noreferrer"
+							className={`flex items-center gap-2 ${isDarkMode ? 'text-gray-400 hover:text-green-400' : 'text-gray-500 hover:text-green-600'} transition-colors`}
+						>
+							<Github className="w-4 h-4" />
+							<span>github.com/tomasfonta</span>
+						</a>
+					</div>
 				</div>
 			</footer>
 		</div>
