@@ -80,7 +80,7 @@ const Index = () => {
 			<div id="resume-content">
 				<main className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-6xl">
 					{/* Hero Section */}
-					<section className={`mb-8 sm:mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+					<section aria-label="Profile" className={`mb-8 sm:mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 						<div className={`${cardClasses} rounded-lg p-6 sm:p-8 border relative overflow-hidden`}>
 							<div className="absolute top-3 sm:top-4 left-3 sm:left-4 flex gap-1 sm:gap-2">
 								<div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500"></div>
@@ -91,7 +91,7 @@ const Index = () => {
 							<div className="absolute top-3 sm:top-4 right-3 sm:right-4">
 								<img
 									src="/logo.png"
-									alt="Logo"
+									alt="Tomás Fontanarrosa – Senior Software Developer logo"
 									className={`w-12 h-12 sm:w-16 sm:h-16 ${isDarkMode ? '' : 'filter invert'}`}
 								/>
 							</div>
@@ -133,7 +133,7 @@ const Index = () => {
 					</section>
 
 					{/* About Section */}
-					<section className={`mb-8 sm:mb-12 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+					<section aria-label="About me" className={`mb-8 sm:mb-12 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 						<Card className={cardClasses}>
 							<CardContent className="p-6 sm:p-8">
 								<h3 className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${isDarkMode ? 'text-green-400' : 'text-green-600'} flex flex-wrap items-center gap-1 sm:gap-2`}>
@@ -152,7 +152,7 @@ const Index = () => {
 					</section>
 
 					{/* Experience Section */}
-					<section className={`mb-8 sm:mb-12 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+					<section aria-label="Work experience" className={`mb-8 sm:mb-12 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 						<Card className={cardClasses}>
 							<CardContent className="p-6 sm:p-8">
 								<h3 className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'} flex flex-wrap items-center gap-1 sm:gap-2`}>
@@ -273,12 +273,12 @@ const Index = () => {
 					</section>
 
 					{/* Tech Stack & Skills Combined */}
-					<section className={`mb-8 sm:mb-12 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+					<section aria-label="Tech stack and skills" className={`mb-8 sm:mb-12 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 						<TechStack title={t.skillsTitle} isDarkMode={isDarkMode} />
 					</section>
 
 					{/* Education Section */}
-					<section className={`mb-8 sm:mb-12 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+					<section aria-label="Education" className={`mb-8 sm:mb-12 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 						<Card className={cardClasses}>
 							<CardContent className="p-6 sm:p-8">
 								<h3 className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${isDarkMode ? 'text-purple-400' : 'text-purple-600'} flex flex-wrap items-center gap-1 sm:gap-2`}>
@@ -324,7 +324,7 @@ const Index = () => {
 					</section>
 
 					{/* Startups & Projects Section */}
-					<section className={`mb-8 sm:mb-12 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+					<section aria-label="Startups and projects" className={`mb-8 sm:mb-12 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 						<Card className={cardClasses}>
 							<CardContent className="p-6 sm:p-8">
 								<h3 className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'} flex flex-wrap items-center gap-1 sm:gap-2`}>
@@ -425,7 +425,7 @@ const Index = () => {
 					</section>
 
 					{/* Languages & Hobbies Section */}
-					<section className={`mb-8 sm:mb-12 transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+					<section aria-label="Languages and hobbies" className={`mb-8 sm:mb-12 transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 						<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
 							<Card className={cardClasses}>
 								<CardContent className="p-6 sm:p-8">
