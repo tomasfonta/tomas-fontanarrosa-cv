@@ -1,12 +1,12 @@
 {
   "name": "tomas-fontanarrosa-cv",
-  "homepage": "https://tomasfonta.github.io/tomas-fontanarrosa-cv/",
+  "homepage": "https://fontanarrosatomas.online/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",

@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -22,7 +23,7 @@ const Index = () => {
 	const t = translations[currentLang];
 
 	const handleDownloadPDF = () => {
-		const pdfUrl = '/tomas-fontanarrosa-cv.pdf';
+		const pdfUrl = `${BASE_URL}tomas-fontanarrosa-cv.pdf`;
 		const link = document.createElement('a');
 		link.href = pdfUrl;
 		link.setAttribute('download', 'tomas-fontanarrosa-cv.pdf'); 
@@ -48,9 +49,9 @@ const Index = () => {
 			{/* Header */}
 			<header className={`sticky top-0 z-50 ${isDarkMode ? 'bg-gray-900/80' : 'bg-white/80'} backdrop-blur-sm border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
 				<div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-					<div className={`${isDarkMode ? 'text-green-400' : 'text-green-600'} font-bold text-lg sm:text-xl`}>
+					<Link to="/" className={`${isDarkMode ? 'text-green-400' : 'text-green-600'} font-bold text-lg sm:text-xl hover:underline`} title="Volver al inicio">
 						&gt; fontanarrosatomas.online
-					</div>
+					</Link>
 					<div className="flex flex-wrap items-center gap-2 sm:gap-4">
 						<Button
 							onClick={toggleTheme}
