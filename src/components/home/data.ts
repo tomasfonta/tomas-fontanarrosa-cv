@@ -1,6 +1,6 @@
 import {
 	Table2, EyeOff, Unlink, Repeat, Globe, Lightbulb,
-	Receipt, MonitorPlay, KeyRound, Users,
+	Receipt, MonitorPlay, KeyRound, Users, FileText, UserCheck,
 	type LucideIcon,
 } from "lucide-react";
 
@@ -9,16 +9,9 @@ export const CONTACT = {
 	phoneDisplay: "+34 649 006 569",
 	whatsapp: "https://wa.me/34649006569",
 	site: "fontanarrosatomas.online",
-	location: "Palma de Mallorca · remoto y presencial según el proyecto",
+	location: "Palma de Mallorca · trabajo remoto y presencial según el proyecto",
 	github: "https://github.com/tomasfonta",
 };
-
-export const STATS: { value: string; label: string; icon?: LucideIcon }[] = [
-	{ value: "2016", label: "Construyendo desde" },
-	{ value: "4", label: "Etapas documentadas", icon: Receipt },
-	{ value: "1", label: "Contraparte responsable", icon: Users },
-	{ value: "0", label: "Sorpresas de precio", icon: KeyRound },
-];
 
 export const PROBLEMAS: { icon: LucideIcon; t: string; d: string }[] = [
 	{ icon: Table2, t: "Procesos manuales que no escalan", d: "El negocio creció y sigue funcionando con planillas, carga doble de datos y coordinación por WhatsApp." },
@@ -106,11 +99,19 @@ export const TRABAJOS: Trabajo[] = [
 	},
 ];
 
+// Hero figures. The first one is derived from TRABAJOS so the stat and the list never drift apart.
+export const STATS: { value: string; label: string; icon?: LucideIcon }[] = [
+	{ value: String(TRABAJOS.length), label: "Proyectos entregados" },
+	{ value: "4", label: "Etapas documentadas", icon: FileText },
+	{ value: "1", label: "Contraparte responsable", icon: UserCheck },
+	{ value: "0", label: "Sorpresas de precio", icon: Receipt },
+];
+
 export const TIPOS_PROYECTO = [
-	"Automatizar un proceso",
+	"Proceso manual que no escala",
+	"Falta de visibilidad / reportes",
 	"Integrar herramientas",
-	"Tablero de datos",
-	"Sitio o plataforma web",
-	"Construir un producto desde cero",
-	"No sé todavía",
+	"Equipamiento e infraestructura",
+	"Idea de producto desde cero",
+	"Todavía no sé",
 ];

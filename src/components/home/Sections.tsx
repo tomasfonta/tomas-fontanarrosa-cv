@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { ArrowRight, Check, ExternalLink, Mail, MapPin, MessageCircle, ChevronDown, Workflow } from "lucide-react";
+import { ArrowRight, Check, CheckCircle2, ExternalLink, Mail, MapPin, MessageCircle, ChevronDown, Workflow } from "lucide-react";
 import { BrandButton } from "@/components/brand/Button";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 import { cn } from "@/lib/utils";
@@ -56,7 +56,7 @@ export function Problemas() {
 	return (
 		<section id="que-resolvemos" aria-label="Qué resolvemos" className={cn(sectionY, "bg-gris-50")}>
 			<div className={container}>
-				<SectionHeading eyebrow="Qué resolvemos" title="Seis problemas concretos" lead="Si te reconocés en uno de estos, hay algo para hacer." />
+				<SectionHeading eyebrow="Qué resolvemos" title="Seis problemas concretos" lead="Si te reconocés en uno de estos, hay algo para hacer. No hace falta que sepas qué construir: para eso estoy yo." />
 				<ul className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
 					{PROBLEMAS.map((p) => (
 						<li
@@ -103,7 +103,7 @@ export function Capacidades() {
 						</li>
 					))}
 				</ol>
-				<p className="mt-3 font-mono text-[11px] text-gris-400 lg:hidden">Deslizá para ver las cinco →</p>
+				<p className="mt-3 font-mono text-[11px] text-gris-400 lg:hidden">Deslizá para ver las cinco.</p>
 			</div>
 		</section>
 	);
@@ -228,6 +228,7 @@ export function Contacto() {
 	const [email, setEmail] = useState("");
 	const [tipo, setTipo] = useState("");
 	const [problema, setProblema] = useState("");
+	const [sent, setSent] = useState(false);
 
 	const body = () => {
 		const lines = [`Nombre y empresa: ${nombre}`, `Email: ${email}`];
@@ -240,6 +241,7 @@ export function Contacto() {
 		e.preventDefault();
 		const subject = `Consulta desde la web${nombre ? ` — ${nombre}` : ""}`;
 		window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body())}`;
+		setSent(true);
 	};
 
 	const waHref = `${CONTACT.whatsapp}?text=${encodeURIComponent(problema ? `Hola Tomás. ${problema}` : "Hola Tomás, quiero contarte un problema de mi operación.")}`;
@@ -272,6 +274,20 @@ export function Contacto() {
 					</ul>
 				</div>
 
+				{sent ? (
+					<div role="status" className="grid content-start gap-3 rounded-panel bg-white p-5 shadow-4 sm:p-7">
+						<span className="grid h-9 w-9 place-items-center rounded-icon bg-lima text-ink">
+							<CheckCircle2 className="h-5 w-5" />
+						</span>
+						<h3 className="font-display text-[22px] font-bold leading-tight tracking-heading text-ink">Listo, te escribo hoy mismo</h3>
+						<p className="text-[15px] leading-relaxed text-gris-600">
+							Se abrió tu correo con el mensaje armado. Mandalo y vas a recibir una respuesta con dos o tres preguntas concretas.
+						</p>
+						<BrandButton href={waHref} target="_blank" rel="noopener noreferrer" variant="secondary" size="md" className="mt-2 w-fit">
+							<MessageCircle /> Prefiero WhatsApp
+						</BrandButton>
+					</div>
+				) : (
 				<form onSubmit={onSubmit} className="grid gap-4 rounded-panel bg-white p-5 shadow-4 sm:p-7">
 					<div className="grid gap-1.5">
 						<label htmlFor="c-nombre" className="flex gap-1 text-xs font-semibold text-ink">
@@ -309,6 +325,7 @@ export function Contacto() {
 						<MessageCircle /> Escribime por WhatsApp
 					</BrandButton>
 				</form>
+				)}
 			</div>
 		</section>
 	);
